@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyme's Up! - Recipe Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Thyme's Up!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#meal-planner">Meal Planner</a></li>
+                    <li><a href="#grocery-list">Grocery List</a></li>
+                    <li><a href="#register">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Quick & Easy Recipes</h2>
+        <p>Discover new recipes, save your favorites, and create personalized grocery lists.</p>
+        <a href="#recipes" class="btn">Recipes</a>
+    </section>
+
+    <section id="meal-planner">
+        <h2>Weekly Meal Planner</h2>
+        <p>Plan your meals</p>
+        <a href="mealPlanner.html" class="btn">Start Planning</a>
+    </section>
+
+    <section id="grocery-list">
+        <h2>Grocery List</h2>
+        <p>Generate your list</p>
+        <a href="groceryList.html" class="btn">View List</a>
+    </section>
+
+
+    <section id="register" class="register-form">
+        <h2>Sign Up</h2>
+        <form action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label>
+                <input type="checkbox" name="newsletter"> Subscribe to newsletter
+            </label>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Thyme's Up! All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
