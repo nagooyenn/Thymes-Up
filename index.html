@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyme's Up! - Recipe Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Thyme's Up!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#recipes">Recipes</a></li>
+                    <li><a href="#meal-planner">Meal Planner</a></li>
+                    <li><a href="#grocery-list">Grocery List</a></li>
+                    <li><a href="#register">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Quick & Easy Recipes</h2>
+        <p>Discover new recipes, save your favorites, and create personalized grocery lists.</p>
+        <a href="#recipes" class="btn">Recipes</a>
+    </section>
+    <section class="search-container">
+        <input type="text" id="search-bar" placeholder="Search recipes...">
+        <button id="filter-btn" class="btn">Filters</button>
+    </section>
+    
+    <div id="filter-box" class="filter-box hidden">
+        <h3>Filter Options</h3>
+        <fieldset>
+            <legend>Dietary Restrictions:</legend>
+            <label><input type="checkbox" name="diet" value="Vegetarian">Vegetarian</label>
+            <label><input type="checkbox" name="diet" value="Vegan">Vegan</label>
+            <label><input type="checkbox" name="diet" value="Gluten-Free">Gluten-Free</label>
+            <label><input type="checkbox" name="diet" value="Nut-Free">Nut-Free</label>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Cook Time:</legend>
+            <label><input type="radio" name="time" value="Under 30 min"> Under 30 min</label>
+            <label><input type="radio" name="time" value="Under 60 min"> Under 60 min</label>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Meal Type:</legend>
+            <label><input type="checkbox" name="meal" value="Breakfast"> Breakfast</label>
+            <label><input type="checkbox" name="meal" value="Lunch"> Lunch</label>
+            <label><input type="checkbox" name="meal" value="Dinner"> Dinner</label>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Cuisine:</legend>
+            <select id="cuisine">
+                <option value="Any">Any</option>
+                <option value="Indian">Indian</option>
+                <option value="Asian">Asian</option>
+                <option value="Mediterranean">Mediterranean</option>
+            </select>
+        </fieldset>
+    
+        <div class="btn-container">
+            <button id="done-btn" class="btn">Done</button>
+            <button id="clear-btn" class="btn">Clear</button>
+        </div>
+    
+    </div>
+    
+    <section id="recipes" class="recipe-gallery">
+        <h2>Recipe of the Week</h2>
+        <div class="recipe-card">
+            <img src="images/recipe1.jpg" alt="recipe1">
+            <div class="recipe-info">
+                <h3>Recipe 1</h3>
+                <a href="recipe1.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+    
+        <div class="recipe-card">
+            <img src="images/recipe2.jpg" alt="recipe2">
+            <div class="recipe-info">
+                <h3>Recipe 2</h3>
+                <a href="recipe2.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+    
+        <div class="recipe-card">
+            <img src="images/recipe3.jpg" alt="recipe2">
+            <div class="recipe-info">
+                <h3>Recipe 2</h3>
+                <a href="recipe3.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+    
+        <div class="recipe-card">
+            <img src="images/recipe4.jpg" alt="recipe2">
+            <div class="recipe-info">
+                <h3>Recipe 2</h3>
+                <a href="recipe4.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+    
+        <div class="recipe-card">
+            <img src="images/recipe5.jpg" alt="recipe2">
+            <div class="recipe-info">
+                <h3>Recipe 2</h3>
+                <a href="recipe5.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+        
+        <div class="recipe-card">
+            <img src="images/recipe6.jpg" alt="recipe2">
+            <div class="recipe-info">
+                <h3>Recipe 2</h3>
+                <a href="recipe6.html" class="btn">View Recipe</a>
+            </div>
+        </div>
+       
+    </section>
+
+    <section id="meal-planner">
+        <h2>Weekly Meal Planner</h2>
+        <p>Plan your meals</p>
+        <a href="mealPlanner.html" class="btn">Start Planning</a>
+    </section>
+
+    <section id="grocery-list">
+        <h2>Grocery List</h2>
+        <p>Generate your list</p>
+        <a href="groceryList.html" class="btn">View List</a>
+    </section>
+
+
+    <section id="register" class="register-form">
+        <h2>Sign Up</h2>
+        <form action="#" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label>
+                <input type="checkbox" name="newsletter"> Subscribe to newsletter
+            </label>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Thyme's Up! All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
