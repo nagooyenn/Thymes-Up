@@ -102,3 +102,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 shareRecipe(card);
             });
         }
+
+        card.querySelectorAll('.back-ingredients li').forEach(ingredient => {
+            const textSpan = ingredient.querySelector('.ingredient-text');
+            const checkBtn = ingredient.querySelector('.check-btn');
+            const xBtn = ingredient.querySelector('.x-btn');
+            const subBtn = ingredient.querySelector('.sub-btn');
+            
+            if (checkBtn) {
+                checkBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    textSpan.style.textDecoration = 'line-through';
+                    textSpan.style.color = '#888';
+                    this.style.opacity = '0.7';
+                });
+            }
+            q
+            if (xBtn) {
+                xBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    addToGroceryList(textSpan.textContent);
+                    this.textContent = '✓';
+                    this.style.background = '#4CAF50';
+                });
+            }
+            
+            if (subBtn) {
+                subBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    showSubstitutions(textSpan);
+                });
+            }
+        });
+    });
