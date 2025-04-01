@@ -22,3 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Please enter a valid email address');
                 return;
             }
+            const user = {
+                username,
+                email,
+                password,
+                newsletter: document.querySelector('input[name="newsletter"]').checked,
+                savedRecipes: [],
+                groceryList: []
+            };
+            
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            alert('Registration successful! Welcome to Thyme\'s Up!');
+            registerForm.reset();
+            updateUIForLoggedInUser();
+        });
+    }
