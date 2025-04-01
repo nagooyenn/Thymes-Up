@@ -153,3 +153,20 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('This recipe is already saved!');
         }
     }
+
+    function shareRecipe(card) {
+        const recipeName = card.querySelector('h3').textContent;
+        const shareData = {
+            title: recipeName,
+            text: `Check out this recipe from Thyme's Up: ${recipeName}`,
+            url: window.location.href
+        };
+        
+        if (navigator.share) {
+            navigator.share(shareData)
+                .catch(err => console.log('Error sharing:', err));
+        } else {
+            copyToClipboard(shareData.url);
+            alert('Link copied to clipboard!');
+        }
+    }
