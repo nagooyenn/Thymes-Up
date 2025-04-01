@@ -86,3 +86,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.classList.remove('flipped');
             }
         });
+
+        const saveBtn = card.querySelector('.save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                saveRecipe(card);
+            });
+        }
+        
+        const shareBtn = card.querySelector('.share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                shareRecipe(card);
+            });
+        }
