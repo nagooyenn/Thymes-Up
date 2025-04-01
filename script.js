@@ -255,3 +255,27 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('groceryList', JSON.stringify(groceryList));
         }
     }
+
+    function updateGroceryListDisplay() {
+        groceryListContainer.innerHTML = groceryList.map(item => `
+            <li>
+                ${item}
+                <button class="remove-item" data-item="${item}">X</button>
+            </li>
+        `).join('');
+        
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemToRemove = this.getAttribute('data-item');
+                groceryList = groceryList.filter(item => item !== itemToRemove);
+                updateGroceryList();
+            });
+        });
+    }
+    
+    if (clearGroceryBtn) {
+        clearGroceryBtn.addEventListener('click', function() {
+            groceryList = [];
+            updateGroceryList();
+        });
+    }
