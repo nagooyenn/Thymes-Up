@@ -236,3 +236,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         updateGroceryListDisplay();
     }
+
+    function addToGroceryList(item) {
+        if (!groceryList.includes(item)) {
+            groceryList.push(item);
+            updateGroceryList();
+        }
+    }
+    
+    function updateGroceryList() {
+        updateGroceryListDisplay();
+        
+        if (isLoggedIn()) {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            user.groceryList = groceryList;
+            localStorage.setItem('currentUser', JSON.stringify(user));
+        } else {
+            localStorage.setItem('groceryList', JSON.stringify(groceryList));
+        }
+    }
