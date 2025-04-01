@@ -193,3 +193,22 @@ document.addEventListener('DOMContentLoaded', function() {
         "parsley": ["cilantro", "basil", "chervil"],
         "salt": ["soy sauce", "miso paste", "seaweed"],
     };
+
+    function showSubstitutions(textSpan) {
+        const ingredientText = textSpan.textContent;
+        const ingredient = findMainIngredient(ingredientText);
+        const subs = getSubstitutions(ingredient);
+        
+        if (subs.length > 0) {
+            const subText = subs.join('\n• ');
+            if (confirm(`Substitutions for ${ingredient}:\n• ${subText}\n\nApply first substitution?`)) {
+                const newText = ingredientText.replace(
+                    new RegExp(ingredient, 'i'), 
+                    subs[0]
+                );
+                textSpan.textContent = newText;
+            }
+        } else {
+            alert(`No substitutions found for ${ingredient}`);
+        }
+    }
