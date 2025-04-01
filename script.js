@@ -135,3 +135,21 @@ document.addEventListener('DOMContentLoaded', function() {
             shareRecipe(card);
         });
     }
+
+    function saveRecipe(card) {
+        if (!isLoggedIn()) {
+            alert('Please register or log in to save recipes');
+            return;
+        }
+        
+        const recipeName = card.querySelector('h3').textContent;
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        
+        if (!user.savedRecipes.includes(recipeName)) {
+            user.savedRecipes.push(recipeName);
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            alert(`${recipeName} saved to your collection!`);
+        } else {
+            alert('This recipe is already saved!');
+        }
+    }
