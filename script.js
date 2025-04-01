@@ -312,3 +312,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('submit-recipe').classList.add('hidden');
         });
     }
+
+    function isLoggedIn() {
+        return localStorage.getItem('currentUser') !== null;
+    }
+    
+    function updateUIForLoggedInUser() {
+        if (isLoggedIn()) {
+        }
+    }
+    
+    loadGroceryList();
+    updateUIForLoggedInUser();
+});
