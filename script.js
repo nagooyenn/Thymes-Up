@@ -212,3 +212,14 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(`No substitutions found for ${ingredient}`);
         }
     }
+
+    function getSubstitutions(ingredient) {
+        ingredient = ingredient.toLowerCase();
+        for (const [key, subs] of Object.entries(substitutions)) {
+            if (ingredient.includes(key)) {
+                return subs;
+            }
+        }
+        return [];
+    }
+    
