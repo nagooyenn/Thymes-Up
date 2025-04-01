@@ -55,3 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
             filterBox.classList.add('hidden');
             applyFilters();
         });
+
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            const inputs = filterBox.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                if (input.type === 'checkbox' || input.type === 'radio') {
+                    input.checked = false;
+                } else if (input.tagName === 'SELECT') {
+                    input.selectedIndex = 0;
+                }
+            });
+        });
+    }
+
+    function applyFilters() {
+        console.log('Applying filters...');
+    }
