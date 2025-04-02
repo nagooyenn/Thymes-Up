@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function applyFilters() {
         console.log('Applying filters...');
     }
-    }
 
     const recipeCards = document.querySelectorAll('.recipe-card');
 
@@ -88,22 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        const saveBtn = card.querySelector('.save-btn');
-        if (saveBtn) {
-            saveBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                saveRecipe(card);
-            });
-        }
-        
-        const shareBtn = card.querySelector('.share-btn');
-        if (shareBtn) {
-            shareBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                shareRecipe(card);
-            });
-        }
-
         card.querySelectorAll('.back-ingredients li').forEach(ingredient => {
             const textSpan = ingredient.querySelector('.ingredient-text');
             const checkBtn = ingredient.querySelector('.check-btn');
@@ -118,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.opacity = '0.7';
                 });
             }
-            q
+            
             if (xBtn) {
                 xBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -135,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
     });
 
     const saveBtn = card.querySelector('.save-btn');
