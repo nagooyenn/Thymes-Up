@@ -87,6 +87,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        const saveBtn = card.querySelector('.save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                saveRecipe(card);
+            });
+        }
+        
+        const shareBtn = card.querySelector('.share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                shareRecipe(card);
+            });
+        }
+
         card.querySelectorAll('.back-ingredients li').forEach(ingredient => {
             const textSpan = ingredient.querySelector('.ingredient-text');
             const checkBtn = ingredient.querySelector('.check-btn');
@@ -118,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
     });
 
     const saveBtn = card.querySelector('.save-btn');
@@ -324,4 +341,3 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loadGroceryList();
     updateUIForLoggedInUser();
-});
