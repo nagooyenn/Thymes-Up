@@ -179,3 +179,149 @@ document.addEventListener('DOMContentLoaded', function() {
         document.execCommand('copy');
         document.body.removeChild(textarea);
     }
+    
+    const substitutions = {
+        "milk": ["almond milk", "soy milk", "oat milk", "coconut milk"],
+        "butter": ["margarine", "coconut oil", "lard", "vegetable oil"],
+        "flour": ["almond flour", "coconut flour", "oat flour"],
+        "sugar": ["honey", "maple syrup", "stevia", "monk fruit sweetener"],
+        "cream": ["coconut cream", "evaporated milk", "yogurt", "silken tofu"],
+        "cheese": ["nutritional yeast", "tofu", "cashew cheese"],
+        "chicken": ["tofu", "tempeh", "jackfruit", "mushrooms"],
+        "garlic": ["garlic powder ", "shallots", "chives"],
+        "onion": ["onion powder", "shallots", "leeks", "chives"],
+        "parsley": ["cilantro", "basil", "chervil"],
+        "salt": ["soy sauce", "miso paste", "seaweed"],
+    };
+
+    function showSubstitutions(textSpan) {
+        const ingredientText = textSpan.textContent;
+        const ingredient = findMainIngredient(ingredientText);
+        const subs = getSubstitutions(ingredient);
+        
+        if (subs.length > 0) {
+            const subText = subs.join('\n• ');
+            if (confirm(`Substitutions for ${ingredient}:\n• ${subText}\n\nApply first substitution?`)) {
+                const newText = ingredientText.replace(
+                    new RegExp(ingredient, 'i'), 
+                    subs[0]
+                );
+                textSpan.textContent = newText;
+            }
+        } else {
+            alert(`No substitutions found for ${ingredient}`);
+        }
+    }
+
+    function getSubstitutions(ingredient) {
+        ingredient = ingredient.toLowerCase();
+        for (const [key, subs] of Object.entries(substitutions)) {
+            if (ingredient.includes(key)) {
+                return subs;
+            }
+        }
+        return [];
+    }
+
+    let groceryList = [];
+    const groceryListContainer = document.getElementById('grocery-list-items');
+    const clearGroceryBtn = document.getElementById('clear-grocery-list');
+    
+    function loadGroceryList() {
+        if (isLoggedIn()) {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            groceryList = user.groceryList || [];
+        } else {
+            groceryList = JSON.parse(localStorage.getItem('groceryList')) || [];
+        }
+        updateGroceryListDisplay();
+    }
+
+    function addToGroceryList(item) {
+        if (!groceryList.includes(item)) {
+            groceryList.push(item);
+            updateGroceryList();
+        }
+    }
+    
+    function updateGroceryList() {
+        updateGroceryListDisplay();
+        
+        if (isLoggedIn()) {
+            const user = JSON.parse(localStorage.getItem('currentUser'));
+            user.groceryList = groceryList;
+            localStorage.setItem('currentUser', JSON.stringify(user));
+        } else {
+            localStorage.setItem('groceryList', JSON.stringify(groceryList));
+        }
+    }
+
+    function updateGroceryListDisplay() {
+        groceryListContainer.innerHTML = groceryList.map(item => `
+            <li>
+                ${item}
+                <button class="remove-item" data-item="${item}">X</button>
+            </li>
+        `).join('');
+        
+        document.querySelectorAll('.remove-item').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemToRemove = this.getAttribute('data-item');
+                groceryList = groceryList.filter(item => item !== itemToRemove);
+                updateGroceryList();
+            });
+        });
+    }
+    
+    if (clearGroceryBtn) {
+        clearGroceryBtn.addEventListener('click', function() {
+            groceryList = [];
+            updateGroceryList();
+        });
+    }
+
+    const recipeForm = document.getElementById('recipe-form');
+    if (recipeForm) {
+        recipeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!isLoggedIn()) {
+                alert('Please register or log in to submit recipes');
+                return;
+            }
+            
+            const newRecipe = {
+                name: document.getElementById('recipe-name').value.trim(),
+                image: document.getElementById('recipe-image').value.trim() || 'https://via.placeholder.com/600x400',
+                description: document.getElementById('recipe-description').value.trim(),
+                ingredients: document.getElementById('recipe-ingredients').value.split('\n').filter(i => i.trim()),
+                instructions: document.getElementById('recipe-instructions').value.split('\n').filter(i => i.trim())
+            };
+            
+            if (!newRecipe.name || newRecipe.ingredients.length === 0 || newRecipe.instructions.length === 0) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const recipes = JSON.parse(localStorage.getItem('userRecipes')) || [];
+            recipes.push(newRecipe);
+            localStorage.setItem('userRecipes', JSON.stringify(recipes));
+            
+            alert('Recipe submitted successfully!');
+            recipeForm.reset();
+            document.getElementById('submit-recipe').classList.add('hidden');
+        });
+    }
+
+    function isLoggedIn() {
+        return localStorage.getItem('currentUser') !== null;
+    }
+    
+    function updateUIForLoggedInUser() {
+        if (isLoggedIn()) {
+        }
+    }
+    
+    loadGroceryList();
+    updateUIForLoggedInUser();
+});
