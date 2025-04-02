@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function applyFilters() {
         console.log('Applying filters...');
     }
+    }
 
     const recipeCards = document.querySelectorAll('.recipe-card');
 
