@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.opacity = '0.7';
                 });
             }
-            q
+
             if (xBtn) {
                 xBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -278,4 +278,51 @@ document.addEventListener('DOMContentLoaded', function() {
             groceryList = [];
             updateGroceryList();
         });
+
     }
+
+    const recipeForm = document.getElementById('recipe-form');
+    if (recipeForm) {
+        recipeForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!isLoggedIn()) {
+                alert('Please register or log in to submit recipes');
+                return;
+            }
+            
+            const newRecipe = {
+                name: document.getElementById('recipe-name').value.trim(),
+                image: document.getElementById('recipe-image').value.trim() || 'https://via.placeholder.com/600x400',
+                description: document.getElementById('recipe-description').value.trim(),
+                ingredients: document.getElementById('recipe-ingredients').value.split('\n').filter(i => i.trim()),
+                instructions: document.getElementById('recipe-instructions').value.split('\n').filter(i => i.trim())
+            };
+            
+            if (!newRecipe.name || newRecipe.ingredients.length === 0 || newRecipe.instructions.length === 0) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            const recipes = JSON.parse(localStorage.getItem('userRecipes')) || [];
+            recipes.push(newRecipe);
+            localStorage.setItem('userRecipes', JSON.stringify(recipes));
+            
+            alert('Recipe submitted successfully!');
+            recipeForm.reset();
+            document.getElementById('submit-recipe').classList.add('hidden');
+        });
+    }
+
+    function isLoggedIn() {
+        return localStorage.getItem('currentUser') !== null;
+    }
+    
+    function updateUIForLoggedInUser() {
+        if (isLoggedIn()) {
+        }
+    }
+    
+    loadGroceryList();
+    updateUIForLoggedInUser();
+}); 
