@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.style.opacity = '0.7';
                 });
             }
-            
+
             if (xBtn) {
                 xBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
             groceryList = [];
             updateGroceryList();
         });
+
     }
 
     const recipeForm = document.getElementById('recipe-form');
