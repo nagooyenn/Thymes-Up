@@ -1,4 +1,7 @@
 
+
+=======
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,6 +10,7 @@
 }
 
 body {
+
     margin: 20;
     color: darkslategray;
     background: lightyellow;
@@ -17,10 +21,28 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+=======
+    margin: 0;
+    color: darkslategray;
+    background: lightyellow;
+    line-height: 1.6;
+}
+
+header {
+    background: rgb(255, 137, 94);
+    color: rgb(14, 58, 29);
+    font-size: larger;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
 }
 
 .navbar ul {
     list-style: none;
+
     padding: 20;
 
 }
@@ -49,15 +71,58 @@ header {
 
 .hero h2 {
     font-size: 30px;
+=======
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar ul li {
+    margin: 10px 15px;
+}
+
+.navbar ul li a {
+    color: rgb(18, 55, 31);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(19, 57, 32);
+}
+
+.hero {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                url('https://i.pinimg.com/1200x/ea/00/6e/ea006e95a52a6999aa7a8d4bb6efd6c8.jpg') no-repeat center center/cover;
+    color: rgb(19, 57, 32);
+    font-style: italic;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+
     margin-bottom: 20px;
 }
 
 .hero p {
+
     font-size: 18px;
+=======
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+
 }
 
 .btn {
     display: inline-block;
+
     color: #fff;
     background: cornflowerblue;
     padding: 10px 25px;
@@ -85,10 +150,148 @@ header {
     overflow: hidden;
     box-shadow: 0 4px 8px #aaa;
     transition: 0.3s;
+=======
+    color: rgb(19, 57, 32);
+    font-weight: bold;
+    background: rgb(255, 236, 109);
+    padding: 12px 30px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #f77c25;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.search-container {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    display: flex;
+}
+
+#search-bar {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+#filter-btn {
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+}
+
+.filter-box {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.filter-box.hidden {
+    display: none;
+}
+
+.filter-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(3, 35, 14);
+}
+
+.filter-box fieldset {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-box legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: rgb(107, 28, 2);
+}
+
+.filter-box label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recipe-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.recipe-front, .recipe-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+}
+
+.recipe-front {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-back {
+    background: white;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.recipe-card.flipped .recipe-front {
+    transform: rotateY(180deg);
+}
+
+.recipe-card.flipped .recipe-back {
+    transform: rotateY(0deg);
+
 }
 
 .recipe-card img {
     width: 100%;
+
     height: 200px;
 }
 
@@ -167,3 +370,247 @@ footer {
     text-align: center;
     padding: 20px;
 }
+=======
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.recipe-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-info h3 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+    color: rgb(0, 37, 13);
+}
+
+.recipe-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.save-btn {
+    background: rgb(136, 183, 153);
+    color: rgb(46, 71, 55)
+}
+
+.share-btn {
+    background: rgb(46, 71, 55);
+    color: white;
+}
+
+.back-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-content h3 {
+    color: rgb(246, 111, 0);
+    margin: 15px 0 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(0, 83, 17);
+}
+
+.back-ingredients {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    max-height: 45%;
+}
+
+.back-directions {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 55%;
+    padding-left: 20px;
+}
+
+.back-ingredients li, .back-directions li {
+    margin: 10px 0;
+    padding: 8px;
+    background: rgba(240,240,240,0.5);
+    border-radius: 5px;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 8px;
+    background: rgba(240,240,240,0.5);
+    border-radius: 5px;
+}
+
+.ingredient-text {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.ingredient-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.ingredient-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.ingredient-btn:hover {
+    transform: scale(1.1);
+}
+
+.check-btn {
+    background: #86ff8a;
+    color: white;
+}
+
+.x-btn {
+    background: #ff7300;
+    color: white;
+}
+
+.sub-btn {
+    background: #fffd7c;
+    color: rgb(113, 38, 0);
+    font-weight: bold;
+}
+
+#meal-planner, #grocery-list, #register, #submit-recipe {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+#grocery-list-items {
+    list-style: none;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#grocery-list-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin: 8px 0;
+    background: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.remove-item {
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.remove-item:hover {
+    background: #d32f2f;
+}
+
+.register-form, .submit-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.register-form h2, .submit-form h2 {
+    color: rgb(37, 56, 41);
+    margin-bottom: 25px;
+}
+
+.register-form label, .submit-form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+}
+
+.register-form input, .submit-form input, 
+.submit-form textarea, .submit-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-form fieldset {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.submit-form legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: rgb(37, 56, 41);
+}
+
+footer {
+    background: rgb(47, 79, 64);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .recipe-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    #search-bar {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    #filter-btn {
+        border-radius: 5px;
+    }
+}
+
