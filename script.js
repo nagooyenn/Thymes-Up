@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
-
     }
 
     const filterBtn = document.getElementById('filter-btn');
@@ -279,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
             groceryList = [];
             updateGroceryList();
         });
-
     }
 
     const recipeForm = document.getElementById('recipe-form');
@@ -314,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('submit-recipe').classList.add('hidden');
         });
     }
-
+    
     function isLoggedIn() {
         return localStorage.getItem('currentUser') !== null;
     }
@@ -326,4 +324,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     loadGroceryList();
     updateUIForLoggedInUser();
-}); 
+});
