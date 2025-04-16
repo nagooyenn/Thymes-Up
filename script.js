@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 savedRecipes: [],
                 groceryList: []
             };
-            
+          
+            //also dummy code to simulate successful registration"
             localStorage.setItem('currentUser', JSON.stringify(user));
             alert('Registration successful! Welcome to Thyme\'s Up!');
             registerForm.reset();
@@ -251,6 +252,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return ingredientWords[ingredientWords.length - 1];
     }
+
+    };
 
     function showSubstitutions(textSpan) {
         const ingredientText = textSpan.textContent;
