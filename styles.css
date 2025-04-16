@@ -1,10 +1,5 @@
 
-
-=======
-
-=======
-
-
+<!-- -->
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,9 +8,6 @@
 }
 
 body {
-
-=======
-
 
     margin: 20;
     color: darkslategray;
@@ -381,8 +373,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px;
-}
-
     height: 220px;
     object-fit: cover;
     border-radius: 12px 12px 0 0;
