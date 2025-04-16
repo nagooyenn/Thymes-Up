@@ -1,5 +1,3 @@
-
-<!-- -->
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,18 +6,6 @@
 }
 
 body {
-
-    margin: 20;
-    color: darkslategray;
-    background: lightyellow;
-}
-
-header {
-    background: lightcoral;
-    color: white;
-    padding: 20px;
-    text-align: center;
-
     margin: 0;
     color: darkslategray;
     background: lightyellow;
@@ -35,42 +21,10 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-
-
 }
 
 .navbar ul {
     list-style: none;
-
-    padding: 20;
-
-}
-
-.navbar ul li {
-    display:inline-flex;
-    margin: 10px;
-}
-
-.navbar ul li a {
-    color: linen;
-    font-size: 15px;
-}
-
-.navbar ul li a:hover {
-    color: darkblue;
-}
-
-
-.hero {
-    background: url('images.jpg') no-repeat center center/cover;
-    color: darkblue;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h2 {
-    font-size: 30px;
-
     padding: 0;
     display: flex;
     justify-content: center;
@@ -105,55 +59,17 @@ header {
 
 .hero h2 {
     font-size: 2.5rem;
-
     margin-bottom: 20px;
 }
 
 .hero p {
-
-    font-size: 18px;
-
-
-    font-size: 18px;
-
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto 30px;
-
-
 }
 
 .btn {
     display: inline-block;
-
-    color: #fff;
-    background: cornflowerblue;
-    padding: 10px 25px;
-    margin: 20px 10px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background: red;
-}
-
-.recipe-gallery {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.recipe-card {
-    background: linen;
-    width: 300px;
-    margin: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px #aaa;
-    transition: 0.3s;
-
     color: rgb(19, 57, 32);
     font-weight: bold;
     background: rgb(255, 236, 109);
@@ -289,90 +205,10 @@ header {
 
 .recipe-card.flipped .recipe-back {
     transform: rotateY(0deg);
-
-
 }
 
 .recipe-card img {
     width: 100%;
-
-    height: 200px;
-}
-
-.recipe-info {
-    padding: 15px;
-    text-align: center;
-    
-}
-
-.recipe-info h3 {
-    margin: 10px 0;
-    font-size: 20px;
-}
-
-.recipe-info p {
-    font-size: 16px;
-    color: #555;
-}
-
-
-#meal-planner, #grocery-list, #register {
-    text-align: center;
-    padding: 40px;
-    background: white;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-
-.register-form form {
-    max-width: 500px;
-    margin: 0 auto;
-    background: lightsteelblue;
-    padding: 20px;
-    box-shadow: 0 0 10px #aaa;
-    border-radius: 8px;
-}
-
-.register-form label {
-    display:block; 
-    margin-bottom: 10px;
-}
-
-.register-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    border: 1px solid linen;
-    border-radius: 5px;
-}
-
-.register-form button {
-    background: gray;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.register-form button:hover {
-    background: red;
-}
-
-footer {
-    background: darkslategray;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
     height: 220px;
     object-fit: cover;
     border-radius: 12px 12px 0 0;
@@ -615,4 +451,3 @@ footer {
         border-radius: 5px;
     }
 }
-
