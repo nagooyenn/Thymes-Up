@@ -1,4 +1,3 @@
-<!---->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thyme's Up! - Recipe Hub</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -19,6 +19,7 @@
                     <li><a href="#recipes">Recipes</a></li>
                     <li><a href="#meal-planner">Meal Planner</a></li>
                     <li><a href="#grocery-list">Grocery List</a></li>
+                    <li><a href="#submit-recipe">Submit Recipe</a></li>
                     <li><a href="#register">Sign Up</a></li>
                 </ul>
             </nav>
@@ -28,69 +29,14 @@
     <section id="home" class="hero">
         <h2>Quick & Easy Recipes</h2>
         <p>Discover new recipes, save your favorites, and create personalized grocery lists.</p>
-        <a href="#recipes" class="btn">Recipes</a>
-    </section>
-
-        <a href="#recipes" class="btn">Recipes</a>
-    </section>
-
-    <section id="recipes" class="recipe-gallery">
-        <h2>Recipe of the Week</h2>
-        <div class="recipe-card">
-            <img src="images/recipe1.jpg" alt="recipe1">
-            <div class="recipe-info">
-                <h3>Recipe 1</h3>
-                <a href="recipe1.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe2.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe2.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe3.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe3.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe4.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe4.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe5.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe5.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-        
-        <div class="recipe-card">
-            <img src="images/recipe6.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe6.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-       
         <a href="#recipes" class="btn">Browse Recipes</a>
     </section>
+    
     <section class="search-container">
         <input type="text" id="search-bar" placeholder="Search recipes...">
         <button id="filter-btn" class="btn">Filters</button>
     </section>
-
+    
     <div id="filter-box" class="filter-box hidden">
         <h3>Filter Options</h3>
         <fieldset>
@@ -100,20 +46,20 @@
             <label><input type="checkbox" name="diet" value="Gluten-Free">Gluten-Free</label>
             <label><input type="checkbox" name="diet" value="Nut-Free">Nut-Free</label>
         </fieldset>
-
+    
         <fieldset>
             <legend>Cook Time:</legend>
             <label><input type="radio" name="time" value="Under 30 min"> Under 30 min</label>
             <label><input type="radio" name="time" value="Under 60 min"> Under 60 min</label>
         </fieldset>
-
+    
         <fieldset>
             <legend>Meal Type:</legend>
             <label><input type="checkbox" name="meal" value="Breakfast"> Breakfast</label>
             <label><input type="checkbox" name="meal" value="Lunch"> Lunch</label>
             <label><input type="checkbox" name="meal" value="Dinner"> Dinner</label>
         </fieldset>
-
+    
         <fieldset>
             <legend>Cuisine:</legend>
             <select id="cuisine">
@@ -123,71 +69,19 @@
                 <option value="Mediterranean">Mediterranean</option>
             </select>
         </fieldset>
-
+    
         <div class="btn-container">
             <button id="done-btn" class="btn">Done</button>
             <button id="clear-btn" class="btn">Clear</button>
         </div>
-    
     </div>
     
+    <!-- I removed the individual recipe.html files and added the recipes directly in the index.html file for simplicity and ability to flip over the card/see the recipe without opening a new window! I also added save, share, check/x/sub buttons on the back for each ingredient -->
     <section id="recipes" class="recipe-gallery">
-        <h2>Recipe of the Week</h2>
-        <div class="recipe-card">
-            <img src="images/recipe1.jpg" alt="recipe1">
-            <div class="recipe-info">
-                <h3>Recipe 1</h3>
-                <a href="recipe1.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe2.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe2.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe3.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe3.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe4.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe4.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-    
-        <div class="recipe-card">
-            <img src="images/recipe5.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe5.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-        
-        <div class="recipe-card">
-            <img src="images/recipe6.jpg" alt="recipe2">
-            <div class="recipe-info">
-                <h3>Recipe 2</h3>
-                <a href="recipe6.html" class="btn">View Recipe</a>
-            </div>
-        </div>
-       
-    </div>
-
-    <section id="recipes" class="recipe-gallery">
+        <!-- Cheese Naan -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/76/c5/e2/76c5e2d887faceb1e395cfc9349a1a23.jpg"
-                    alt="Cheese Naan Bread">
+                <img src="https://i.pinimg.com/736x/76/c5/e2/76c5e2d887faceb1e395cfc9349a1a23.jpg" alt="Cheese Naan Bread">
                 <div class="recipe-info">
                     <h3>Cheese Naan Bread</h3>
                     <div class="recipe-actions">
@@ -240,27 +134,21 @@
                     <ol class="back-directions">
                         <li>In a medium bowl, combine the butter and milk and microwave for 50 seconds.</li>
                         <li>Add the active dry yeast and mix well. Add the salt and sugar and mix well.</li>
-                        <li>Fold in the bread flour and cake flour until fully incorporated and microwave for 20
-                            seconds.</li>
-                        <li>Transfer the dough to a floured surface and divide it into 6 pieces. Take a piece and roll
-                            it into a ball. Roll it out to a round about ⅛ inch (3-mm) thick using a rolling pin. Repeat
-                            with the remaining dough.</li>
-                        <li>Put a third of the cheese into the center of the dough. Top with another dough round and
-                            crimp the edges to seal. Repeat with the remaining cheese and dough.</li>
-                        <li>Heat a medium nonstick frying pan over medium heat. Add a filled naan round and cook for 3
-                            minutes, until lightly browned.</li>
-                        <li>Flip the naan bread, then use a spatula to flatten and cook for 3 minutes more. Cook the
-                            remaining naan.</li>
+                        <li>Fold in the bread flour and cake flour until fully incorporated and microwave for 20 seconds.</li>
+                        <li>Transfer the dough to a floured surface and divide it into 6 pieces. Take a piece and roll it into a ball. Roll it out to a round about ⅛ inch (3-mm) thick using a rolling pin. Repeat with the remaining dough.</li>
+                        <li>Put a third of the cheese into the center of the dough. Top with another dough round and crimp the edges to seal. Repeat with the remaining cheese and dough.</li>
+                        <li>Heat a medium nonstick frying pan over medium heat. Add a filled naan round and cook for 3 minutes, until lightly browned.</li>
+                        <li>Flip the naan bread, then use a spatula to flatten and cook for 3 minutes more. Cook the remaining naan.</li>
                         <li>Slice into wedges and serve. Enjoy!</li>
                     </ol>
                 </div>
             </div>
         </div>
 
+        <!-- Fluffy Pancakes -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/98/6e/80/986e8020d901fe1c313e9460495ec5c3.jpg"
-                    alt="Fluffy Pancakes">
+                <img src="https://i.pinimg.com/736x/98/6e/80/986e8020d901fe1c313e9460495ec5c3.jpg" alt="Fluffy Pancakes">
                 <div class="recipe-info">
                     <h3>Fluffy Pancakes</h3>
                     <div class="recipe-actions">
@@ -307,22 +195,18 @@
                         <li>Whisk together the flour and baking powder in a large bowl.</li>
                         <li>In a separate bowl, add the butter, milk, and egg yolks, stirring to combine.</li>
                         <li>In a third bowl, use a hand mixer to beat the egg whites until soft peaks form.</li>
-                        <li>Pour the milk mixture into the flour mixture and stir with rubber spatula until just
-                            combined. Add the beaten egg whites and gently fold to combine.</li>
-                        <li>Heat an 8-inch (20cm) nonstick skillet over low heat. Pour 1 ½ cups of pancake batter into
-                            the skillet, smooth out the top, then cover with a lid. Cook until golden brown on the
-                            bottom and a toothpick inserted into the center comes out clean, about 20 minutes. Transfer
-                            the pancake to a plate and repeat, making 3 more pancakes with the remaining batter.</li>
+                        <li>Pour the milk mixture into the flour mixture and stir with rubber spatula until just combined. Add the beaten egg whites and gently fold to combine.</li>
+                        <li>Heat an 8-inch (20cm) nonstick skillet over low heat. Pour 1 ½ cups of pancake batter into the skillet, smooth out the top, then cover with a lid. Cook until golden brown on the bottom and a toothpick inserted into the center comes out clean, about 20 minutes. Transfer the pancake to a plate and repeat, making 3 more pancakes with the remaining batter.</li>
                         <li>Serve with a toppping of your choice. Enjoy!</li>
                     </ol>
                 </div>
             </div>
         </div>
 
+        <!-- Scallopped Potatoes -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/10/5e/84/105e846df44b1fe3c680f441cac85c6a.jpg"
-                    alt="Scalloped Patatoes">
+                <img src="https://i.pinimg.com/736x/10/5e/84/105e846df44b1fe3c680f441cac85c6a.jpg" alt="Scalloped Patatoes">
                 <div class="recipe-info">
                     <h3>Scalloped Patatoes</h3>
                     <div class="recipe-actions">
@@ -367,13 +251,10 @@
                     <h3>Directions</h3>
                     <ol class="back-directions">
                         <li>Preheat oven to 350°F (180°C).</li>
-                        <li>In a small pot, melt the butter and fry the garlic until it is just starting to brown. Add
-                            the flour, salt and pepper. whisk until there are no lumps.</li>
-                        <li>Slowly drizzle in the milk while constantly whisking to make sure the mixture is smooth.
-                        </li>
+                        <li>In a small pot, melt the butter and fry the garlic until it is just starting to brown. Add the flour, salt and pepper. whisk until there are no lumps.</li>
+                        <li>Slowly drizzle in the milk while constantly whisking to make sure the mixture is smooth.</li>
                         <li>Bring to a boil, then remove from heat.</li>
-                        <li>Slice the potatoes into about ⅛-inch (3 mm) thick slices, then fan them out in a small
-                            baking dish.</li>
+                        <li>Slice the potatoes into about ⅛-inch (3 mm) thick slices, then fan them out in a small baking dish.</li>
                         <li>Pour the sauce on top of the potatoes, then sprinkle with parmesan.</li>
                         <li>Bake for about 1 hour, until the top is bubbly and golden brown.</li>
                         <li>Sprinkle chopped parsley on top, then serve. Enjoy!</li>
@@ -382,10 +263,10 @@
             </div>
         </div>
 
+        <!-- Chopped Mediterranean Salad -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/8b/5b/05/8b5b055c53b390b1333a5ed416c14224.jpg"
-                    alt="Chopped Mediterranean Salad">
+                <img src="https://i.pinimg.com/736x/8b/5b/05/8b5b055c53b390b1333a5ed416c14224.jpg" alt="Chopped Mediterranean Salad">
                 <div class="recipe-info">
                     <h3>Chopped Mediterranean Salad</h3>
                     <div class="recipe-actions">
@@ -471,24 +352,20 @@
                     </ul>
                     <h3>Directions</h3>
                     <ol class="back-directions">
-                        <li>Peel the cucumbers. Cut into discs, and then quarter the discs. Place in a large salad bowl.
-                        </li>
-                        <li>Cut tomatoes into quarters, lengthwise, and then rotate and cut into large chunks. Add to
-                            the salad bowl.</li>
-                        <li>Cut the red onion in half, removing the skin, stem, and bottom. Thinly slice and add to the
-                            bowl.</li>
-                        <li>Add the feta cheese, olive oil, red wine vinegar, salt, pepper, lemon juice, and olives to
-                            the salad bowl and toss gently.</li>
+                        <li>Peel the cucumbers. Cut into discs, and then quarter the discs. Place in a large salad bowl.</li>
+                        <li>Cut tomatoes into quarters, lengthwise, and then rotate and cut into large chunks. Add to the salad bowl.</li>
+                        <li>Cut the red onion in half, removing the skin, stem, and bottom. Thinly slice and add to the bowl.</li>
+                        <li>Add the feta cheese, olive oil, red wine vinegar, salt, pepper, lemon juice, and olives to the salad bowl and toss gently.</li>
                         <li>Enjoy!</li>
                     </ol>
                 </div>
             </div>
         </div>
 
+        <!-- Chicken Noodle Soup -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/d8/0a/3d/d80a3d2f952a886e15a27d12ac9530b1.jpg"
-                    alt="Chicken Noodle Soup">
+                <img src="https://i.pinimg.com/736x/d8/0a/3d/d80a3d2f952a886e15a27d12ac9530b1.jpg" alt="Chicken Noodle Soup">
                 <div class="recipe-info">
                     <h3>Chicken Noodle Soup</h3>
                     <div class="recipe-actions">
@@ -559,13 +436,9 @@
                     </ul>
                     <h3>Directions</h3>
                     <ol class="back-directions">
-                        <li>Heat the olive oil in a large soup pot over medium heat until shimmering. Add the onion,
-                            carrots, celery, salt, and pepper. Cook, stirring frequently, until the vegetables are very
-                            soft, about 15 minutes.</li>
-                        <li>Add the garlic and cook until fragrant, about 1 minute. Add the stock and bring to a boil.
-                        </li>
-                        <li>Add the noodles and cook for 6 minutes, then add the chicken and cook for about 2 minutes
-                            more, until the noodles are tender and the chicken is warmed through.</li>
+                        <li>Heat the olive oil in a large soup pot over medium heat until shimmering. Add the onion, carrots, celery, salt, and pepper. Cook, stirring frequently, until the vegetables are very soft, about 15 minutes.</li>
+                        <li>Add the garlic and cook until fragrant, about 1 minute. Add the stock and bring to a boil.</li>
+                        <li>Add the noodles and cook for 6 minutes, then add the chicken and cook for about 2 minutes more, until the noodles are tender and the chicken is warmed through.</li>
                         <li>Season to taste with more salt and pepper, then stir in the parsley.</li>
                         <li>Enjoy!</li>
                     </ol>
@@ -573,10 +446,10 @@
             </div>
         </div>
 
+        <!-- Chicken Alfredo -->
         <div class="recipe-card">
             <div class="recipe-front">
-                <img src="https://i.pinimg.com/736x/74/ef/cf/74efcf0154cf810df44df70622db3a7d.jpg"
-                    alt="Chicken Alfredo">
+                <img src="https://i.pinimg.com/736x/74/ef/cf/74efcf0154cf810df44df70622db3a7d.jpg" alt="Chicken Alfredo">
                 <div class="recipe-info">
                     <h3>Chicken Alfredo</h3>
                     <div class="recipe-actions">
@@ -672,27 +545,16 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <section id="meal-planner">
         <h2>Weekly Meal Planner</h2>
-        <p>Plan your meals</p>
-
-        <p>Plan your meals</p>
         <p>Plan your meals for the week ahead</p>
-
-        <a href="mealPlanner.html" class="btn">Start Planning</a>
+        <button class="btn" id="open-planner">Start Planning</button>
     </section>
 
     <section id="grocery-list">
         <h2>Grocery List</h2>
-
-        <p>Generate your list</p>
-        <a href="groceryList.html" class="btn">View List</a>
-    </section>
-
-
         <div id="grocery-list-items"></div>
         <button id="clear-grocery-list" class="btn">Clear List</button>
     </section>
@@ -702,31 +564,30 @@
         <form id="recipe-form">
             <label for="recipe-name">Recipe Name:</label>
             <input type="text" id="recipe-name" required>
-
+            
             <label for="recipe-image">Image URL:</label>
             <input type="url" id="recipe-image" placeholder="https://example.com/image.jpg">
-
+            
             <label for="recipe-description">Description:</label>
             <textarea id="recipe-description" rows="3"></textarea>
-
+            
             <fieldset>
                 <legend>Ingredients:</legend>
                 <textarea id="recipe-ingredients" rows="5" required></textarea>
             </fieldset>
-
+            
             <fieldset>
                 <legend>Directions:</legend>
                 <textarea id="recipe-instructions" rows="5" required></textarea>
             </fieldset>
-
+            
             <button type="submit" class="btn">Submit Recipe</button>
         </form>
     </section>
 
-
     <section id="register" class="register-form">
         <h2>Sign Up</h2>
-        <form action="#" method="POST">
+        <form id="register-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -747,7 +608,5 @@
     <footer>
         <p>© 2025 Thyme's Up! All Rights Reserved</p>
     </footer>
-
 </body>
-
 </html>
