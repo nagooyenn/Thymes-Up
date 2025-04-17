@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {   
+                setTimeout(() => {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 10);
+            }
+        });
+    });
+    
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function(e) {
@@ -30,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 savedRecipes: [],
                 groceryList: []
             };
-            
+          
+            //also dummy code to simulate successful registration"
             localStorage.setItem('currentUser', JSON.stringify(user));
             alert('Registration successful! Welcome to Thyme\'s Up!');
             registerForm.reset();
@@ -118,12 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
 
-    const saveBtn = card.querySelector('.save-btn');
-    if (saveBtn) {
-        saveBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
+        const saveBtn = card.querySelector('.save-btn');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
             saveRecipe(card);
         });
     }
@@ -135,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             shareRecipe(card);
         });
     }
+});
 
     function saveRecipe(card) {
         if (!isLoggedIn()) {
@@ -142,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+        //dummy code to simulate saving a recipe// 
         const recipeName = card.querySelector('h3').textContent;
         const user = JSON.parse(localStorage.getItem('currentUser'));
         
@@ -191,7 +210,49 @@ document.addEventListener('DOMContentLoaded', function() {
         "garlic": ["garlic powder ", "shallots", "chives"],
         "onion": ["onion powder", "shallots", "leeks", "chives"],
         "parsley": ["cilantro", "basil", "chervil"],
-        "salt": ["soy sauce", "miso paste", "seaweed"],
+    };
+
+    const MEASUREMENT_WORDS = new Set([
+        'tablespoon', 'tablespoons', 'tbsp', 
+        'teaspoon', 'teaspoons', 'tsp',
+        'cup', 'cups',
+        'ounce', 'ounces', 'oz',
+        'pound', 'pounds', 'lb', 'lbs',
+        'gram', 'grams', 'g',
+        'kilogram', 'kilograms', 'kg',
+        'milliliter', 'milliliters', 'ml',
+        'liter', 'liters', 'l',
+        'pinch', 'dash',
+        'quart', 'quarts', 'qt',
+        'gallon', 'gallons', 'gal'
+    ]);
+
+    function findMainIngredient(text) {
+        const cleanedText = text.replace(/[0-9\/\s]+/, '').trim();
+        const words = cleanedText.toLowerCase().split(/\s+/);
+
+        const ingredientWords = words.filter(word => !MEASUREMENT_WORDS.has(word));
+        if (ingredientWords.length === 0) {
+            return text.toLowerCase();
+        }
+
+        for (let i = ingredientWords.length - 1; i >= 0; i--) {
+            const word = ingredientWords[i];
+        
+            if (substitutions[word]) {
+                return word;
+            }
+            
+            for (const key in substitutions) {
+                if (word.includes(key)) {
+                    return key;
+                }
+            }
+        }
+
+        return ingredientWords[ingredientWords.length - 1];
+    }
+
     };
 
     function showSubstitutions(textSpan) {
