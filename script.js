@@ -253,8 +253,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return ingredientWords[ingredientWords.length - 1];
     }
 
-    };
-
     function showSubstitutions(textSpan) {
         const ingredientText = textSpan.textContent;
         const ingredient = findMainIngredient(ingredientText);
