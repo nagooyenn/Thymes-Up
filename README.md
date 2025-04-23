@@ -7,6 +7,15 @@ The attributes that make our website unique include interactive recipe cards, in
 Team members/contributions:
 Berra: frontend developer (complete development of HTML and CSS)
 Nahla: JavaScript developer (complete development of functionality implementations)
-Annie: Team Lead & GitHub coordinator  
+Annie: Team Lead & GitHub coordinator
+
+![image](https://github.com/user-attachments/assets/29b76c3f-30fe-443f-b49d-4a1e7f8680ec)
+
+![image](https://github.com/user-attachments/assets/84a97f18-e8a5-4649-a725-1d60c38612a6)
+
+
+
+
 
 [![Group 5 Presentation - Thyme's Up!](https://img.youtube.com/vi/E5Nn7bsT82M/0.jpg)](https://youtu.be/E5Nn7bsT82M)
+
