@@ -8,3 +8,5 @@ Team members/contributions:
 Berra: frontend developer (complete development of HTML and CSS)
 Nahla: JavaScript developer (complete development of functionality implementations)
 Annie: Team Lead & GitHub coordinator  
+
+[![Group 5 Presentation - Thyme's Up!](https://img.youtube.com/vi/E5Nn7bsT82M/0.jpg)](https://youtu.be/E5Nn7bsT82M)
